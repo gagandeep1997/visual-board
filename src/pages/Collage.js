@@ -7,13 +7,25 @@ import Money from "../assests/images/money.jpg";
 
 export default function Collage() {
   return (
-    <div className="m-5 px-5">
-      <img src={Travel} alt="" width="400" height="250" />
-      <img src={Health} alt="" width="300" height="250" />
-      <img src={Career} alt="" width="400" height="250" />
-      <div>
-        <img src={Happy} alt="" width="500" height="300" />
-        <img src={Money} alt="" width="600" height="300" />
+    <div className="collage">
+      <div className="container my-5">
+        <div className="row">
+          <div className="col-4 mb-4">
+            <img src={Travel} alt="" width="100%" />
+          </div>
+          <div className="col-4 mb-4">
+            <img src={Health} alt="" width="100%" />
+          </div>
+          <div className="col-4 mb-4">
+            <img src={Career} alt="" width="100%" />
+          </div>
+          <div className="col-6 mb-4">
+            <img src={Happy} alt="" width="100%" />
+          </div>
+          <div className="col-6 mb-4">
+            <img src={Money} alt="" width="100%" />
+          </div>
+        </div>
       </div>
     </div>
   );
