@@ -8,8 +8,8 @@ export default function HomePage({ setShowHomePage }) {
         <div className="col-12 text-center">
           <img
             src={logo_image}
-            className="mx-auto bg-white mt-4 shadow p-3 rounded"
-            alt=""
+            className="homepage-logo mx-auto bg-white mt-4 shadow p-3"
+            alt="logo_digitas"
             width="150"
             height="150"
           />
@@ -33,7 +33,7 @@ export default function HomePage({ setShowHomePage }) {
           style={{ width: "200px" }}
           onClick={() => setShowHomePage(false)}
         >
-          Haa
+          हा
         </button>
         <button
           type="button"
