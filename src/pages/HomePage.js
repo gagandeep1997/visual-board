@@ -29,7 +29,7 @@ export default function HomePage({ setShowHomePage }) {
         </button>
         <button
           type="button"
-          className="btn btn-warning btn-lg shadow"
+          className="btn btn-warning btn-lg shadow fs-2"
           style={{ width: "200px" }}
           onClick={() => setShowHomePage(false)}
         >
@@ -37,7 +37,7 @@ export default function HomePage({ setShowHomePage }) {
         </button>
         <button
           type="button"
-          className="btn btn-success btn-lg shadow"
+          className="btn btn-dark btn-lg shadow"
           style={{ width: "200px" }}
           onClick={() => setShowHomePage(false)}
         >
