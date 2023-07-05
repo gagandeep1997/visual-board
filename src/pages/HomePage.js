@@ -1,7 +1,7 @@
 import React from "react";
 import logo_image from "../assests/images/Digitas_logo_lockup.png";
 
-export default function HomePage({ setShowHomePage }) {
+export default function HomePage({ setPage }) {
   return (
     <div className="container-fluid homepage">
       <div className="row">
@@ -23,7 +23,7 @@ export default function HomePage({ setShowHomePage }) {
           type="button"
           className="btn btn-info btn-lg shadow"
           style={{ width: "200px" }}
-          onClick={() => setShowHomePage(false)}
+          onClick={() => setPage("2")}
         >
           Yes
         </button>
@@ -31,7 +31,7 @@ export default function HomePage({ setShowHomePage }) {
           type="button"
           className="btn btn-warning btn-lg shadow fs-2"
           style={{ width: "200px" }}
-          onClick={() => setShowHomePage(false)}
+          onClick={() => setPage("2")}
         >
           हा
         </button>
@@ -39,7 +39,7 @@ export default function HomePage({ setShowHomePage }) {
           type="button"
           className="btn btn-dark btn-lg shadow"
           style={{ width: "200px" }}
-          onClick={() => setShowHomePage(false)}
+          onClick={() => setPage("2")}
         >
           Definitely
         </button>

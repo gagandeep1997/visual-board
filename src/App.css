@@ -15,10 +15,6 @@
   clip-path: circle();
 }
 
-.collage {
-  background: #fef7ff;
-}
-
 .collage .row img {
   min-height: 100%;
   border: 1px solid #555;
@@ -31,4 +27,29 @@
   border: 1px solid #000;
   box-shadow: 1px 0 17px -4px #555;
   opacity: 1;
+}
+
+.survey-text {
+  padding: 50px;
+  top: 40%;
+  left: 45%;
+}
+
+.health-gif {
+  top: 10%;
+}
+
+.career-gif {
+  left: 25%;
+  top: 40%;
+}
+
+.travel-gif {
+  right: 18%;
+  top: 40%;
+}
+
+.money-gif {
+  bottom: 10%;
+  left: 50%;
 }
