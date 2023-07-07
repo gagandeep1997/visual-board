@@ -6,13 +6,9 @@ export default function HomePage({ setPage }) {
     <div className="container-fluid homepage">
       <div className="row">
         <div className="col-12 text-center">
-          <img
-            src={logo_image}
-            className="homepage-logo mx-auto bg-white mt-4 shadow p-3"
-            alt="logo_digitas"
-            width="150"
-            height="150"
-          />
+          <div className="homepage-logo mx-auto bg-white mt-4 shadow p-3 rounded-circle">
+            <img src={logo_image} alt="logo_digitas" width="150" height="150"/>
+          </div>
         </div>
       </div>
       <h1 className="logo fw-light text-center text-dark">

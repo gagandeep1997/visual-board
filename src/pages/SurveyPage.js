@@ -3,6 +3,7 @@ import healthGif from "../assests/images/self-love.gif";
 import careerGif from "../assests/images/path.gif";
 import travelGif from "../assests/images/airplane.gif";
 import moneyGif from "../assests/images/euro.gif";
+import happyGif from "../assests/images/happy.gif";
 
 export default function SurveyPage() {
   return (
@@ -36,6 +37,13 @@ export default function SurveyPage() {
           <img
             src={moneyGif}
             className="position-absolute money-gif"
+            alt="123"
+            width="100px"
+            height="100px"
+          />
+          <img
+            src={happyGif}
+            className="position-absolute happy-gif"
             alt="123"
             width="100px"
             height="100px"

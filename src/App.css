@@ -12,7 +12,11 @@
 }
 
 .homepage-logo {
-  clip-path: circle();
+  width: 180px;
+}
+
+.homepage-logo img {
+  object-position: 0 -8px;
 }
 
 .collage .row img {
@@ -52,4 +56,9 @@
 .money-gif {
   bottom: 10%;
   left: 50%;
+}
+
+.happy-gif {
+  left: 40%;
+  top: 10%;
 }
