@@ -15,7 +15,7 @@ export default function SurveyPage() {
           </p>
           <img
             src={healthGif}
-            className="position-absolute health-gif start-50"
+            className="position-absolute health-gif"
             alt="123"
             width="100px"
             height="100px"

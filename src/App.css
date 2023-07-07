@@ -41,11 +41,12 @@
 
 .health-gif {
   top: 10%;
+  right: 40%;
 }
 
 .career-gif {
-  left: 25%;
-  top: 40%;
+  left: 30%;
+  top: 60%;
 }
 
 .travel-gif {
@@ -55,10 +56,10 @@
 
 .money-gif {
   bottom: 10%;
-  left: 50%;
+  right: 40%;
 }
 
 .happy-gif {
-  left: 40%;
-  top: 10%;
+  left: 30%;
+  top: 20%;
 }
