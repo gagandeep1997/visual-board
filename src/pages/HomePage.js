@@ -1,44 +1,37 @@
 import React from "react";
-import logo_image from "../assests/images/Digitas_logo_lockup.png";
+import { useNavigate } from "react-router-dom";
+import Travel from "../assests/images/travel.jpg";
+import Health from "../assests/images/health.jpg";
+import Career from "../assests/images/career.jpg";
+import Happy from "../assests/images/happy.jpg";
+import Money from "../assests/images/money.jpg";
 
-export default function HomePage({ setPage }) {
+export default function HomePage() {
+  const navigate = useNavigate();
+  const goToSurveyPageHandler = () => {
+    navigate("/surveyhome");
+  };
+
   return (
-    <div className="container-fluid homepage">
-      <div className="row">
-        <div className="col-12 text-center">
-          <div className="homepage-logo mx-auto bg-white mt-4 shadow p-3 rounded-circle">
-            <img src={logo_image} alt="logo_digitas" width="150" height="150"/>
+    <div className="collage">
+      <div className="container my-5">
+        <div className="row">
+          <div className="col-4 mb-4" onClick={goToSurveyPageHandler}>
+            <img src={Travel} alt="" width="100%" />
+          </div>
+          <div className="col-4 mb-4" onClick={goToSurveyPageHandler}>
+            <img src={Health} alt="" width="100%" />
+          </div>
+          <div className="col-4 mb-4" onClick={goToSurveyPageHandler}>
+            <img src={Career} alt="" width="100%" />
+          </div>
+          <div className="col-6 mb-4" onClick={goToSurveyPageHandler}>
+            <img src={Happy} alt="" width="100%" />
+          </div>
+          <div className="col-6 mb-4" onClick={goToSurveyPageHandler}>
+            <img src={Money} alt="" width="100%" />
           </div>
         </div>
-      </div>
-      <h1 className="logo fw-light text-center text-dark">
-        Are you a Day Dreamer or a Night Dreamer?
-      </h1>
-      <div className="d-flex flex-row justify-content-evenly pt-5 mt-5">
-        <button
-          type="button"
-          className="btn btn-info btn-lg shadow"
-          style={{ width: "200px" }}
-          onClick={() => setPage("2")}
-        >
-          Yes
-        </button>
-        <button
-          type="button"
-          className="btn btn-warning btn-lg shadow fs-2"
-          style={{ width: "200px" }}
-          onClick={() => setPage("2")}
-        >
-          हा
-        </button>
-        <button
-          type="button"
-          className="btn btn-dark btn-lg shadow"
-          style={{ width: "200px" }}
-          onClick={() => setPage("2")}
-        >
-          Definitely
-        </button>
       </div>
     </div>
   );

@@ -1,17 +1,29 @@
-import React, { useState } from "react";
+import React from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import WelcomePage from "./pages/WelcomePage";
 import HomePage from "./pages/HomePage";
-import Collage from "./pages/Collage";
+import WelcomeSurveyPage from "./pages/WelcomeSurveyPage";
 import "./App.css";
-import SurveyPage from "./pages/SurveyPage";
 
 export default function App() {
-  const [page, setPage] = useState("1");
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <WelcomePage />,
+    },
+    {
+      path: "/homepage",
+      element: <HomePage />,
+    },
+    {
+      path: "/surveyhome",
+      element: <WelcomeSurveyPage />,
+    },
+  ]);
 
-  return (
-    <>
-      {page === "1" ? <HomePage setPage={setPage} /> : <></>}
-      {page === "2" ? <Collage setPage={setPage} /> : <></>}
-      {page === "3" ? <SurveyPage /> : <></>}
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
+
+// {/* {page === "1" ? <HomePage setPage={setPage} /> : <></>}
+//       {page === "2" ? <Collage setPage={setPage} /> : <></>}
+//       {page === "3" ? <SurveyPage /> : <></>} */}
