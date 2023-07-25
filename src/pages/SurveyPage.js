@@ -4,6 +4,7 @@ import Header from "../components/Header";
 
 export default function SurveyPage() {
   const [activeQuestion, setActiveQuestion] = useState(1);
+  const [isChecked, setIsChecked] = useState(false);
   const [questions, setQuestions] = useState();
   const navigate = useNavigate();
   let surveypath = useHref();
@@ -18,29 +19,82 @@ export default function SurveyPage() {
     if (activeQuestion === questions.question.length) {
       navigate("../surveyhome");
     }
+
     document
       .getElementById(`question-${activeQuestion}`)
       .classList.add("d-none");
+
     setActiveQuestion((prevstate) => {
       return prevstate + 1;
     });
+
+    const inputs = document.querySelectorAll(
+      `#question-${activeQuestion+1} input`
+    );
+    let checkFound = false;
+    inputs.forEach((value) => {
+      if (value.checked) {
+        checkFound = true;
+        return;
+      }
+    });
+    if (checkFound) {
+      setIsChecked(true);
+    } else {
+      setIsChecked(false);
+    }
   };
 
   const prevQuestion = () => {
     document
       .getElementById(`question-${activeQuestion}`)
       .classList.add("d-none");
+
     setActiveQuestion((prevstate) => {
       return prevstate - 1;
     });
+
+    const inputs = document.querySelectorAll(
+      `#question-${activeQuestion-1} input`
+    );
+    let checkFound = false;
+    inputs.forEach((value) => {
+      if (value.checked) {
+        checkFound = true;
+        return;
+      }
+    });
+    if (checkFound) {
+      setIsChecked(true);
+    } else {
+      setIsChecked(false);
+    }
+  };
+
+  const optionClickHandler = (e) => {
+    if (e.target.checked) {
+      setIsChecked(true);
+    } else {
+      const inputs = document.querySelectorAll(
+        `#question-${activeQuestion} input`
+      );
+      let checkFound = false;
+      inputs.forEach((value) => {
+        if (value.checked) {
+          checkFound = true;
+          return;
+        }
+      });
+      if (!checkFound) {
+        setIsChecked(false);
+      }
+    }
   };
 
   useEffect(() => {
     fetchData().then((data) => {
       let currentPath = surveypath.slice(1);
-      console.log(currentPath);
       data.forEach((value) => {
-        console.log(value);
         if (value.slug === currentPath) {
           setQuestions(value);
         }
@@ -82,6 +136,7 @@ export default function SurveyPage() {
                           className="btn-check"
                           id={option}
                           autoComplete="off"
+                          onClick={optionClickHandler}
                         />
                         <label
                           className="btn btn-outline-primary w-100 rounded-pill p-2"
@@ -107,6 +162,7 @@ export default function SurveyPage() {
                     type="button"
                     className="btn btn-warning p-3"
                     onClick={nextQuestion}
+                    disabled={!isChecked}
                   >
                     <i className="fa-solid fa-arrow-right"></i>
                   </button>
