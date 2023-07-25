@@ -4,6 +4,7 @@ import WelcomePage from "./pages/WelcomePage";
 import HomePage from "./pages/HomePage";
 import WelcomeSurveyPage from "./pages/WelcomeSurveyPage";
 import "./App.css";
+import SurveyPage from "./pages/SurveyPage";
 
 export default function App() {
   const router = createBrowserRouter([
@@ -19,11 +20,27 @@ export default function App() {
       path: "/surveyhome",
       element: <WelcomeSurveyPage />,
     },
+    {
+      path: "/career",
+      element: <SurveyPage />,
+    },
+    {
+      path: "/happy",
+      element: <SurveyPage />,
+    },
+    {
+      path: "/health",
+      element: <SurveyPage />,
+    },
+    {
+      path: "/travel",
+      element: <SurveyPage />,
+    },
+    {
+      path: "/money",
+      element: <SurveyPage />,
+    },
   ]);
 
   return <RouterProvider router={router} />;
 }
-
-// {/* {page === "1" ? <HomePage setPage={setPage} /> : <></>}
-//       {page === "2" ? <Collage setPage={setPage} /> : <></>}
-//       {page === "3" ? <SurveyPage /> : <></>} */}
