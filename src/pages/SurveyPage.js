@@ -1,11 +1,67 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useReducer } from "react";
 import { useNavigate, useHref } from "react-router-dom";
 import Header from "../components/Header";
+
+function reducerfunction(state, action) {
+  switch (action.type) {
+    case "a": {
+      return {
+        ...state,
+        optionsSelected: action.payload,
+      };
+    }
+    case "b": {
+      return {
+        ...state,
+        optionsSelected: action.payload,
+      };
+    }
+    case "c": {
+      return {
+        ...state,
+        totalAnswersCompleted: state.totalAnswersCompleted + 1,
+        totalProgress:
+          ((state.totalAnswersCompleted + 1) / action.payload) * 100,
+      };
+    }
+    case "d": {
+      return {
+        ...state,
+        optionsSelected: state.optionsSelected + 1,
+      };
+    }
+    case "e": {
+      return {
+        ...state,
+        totalAnswersCompleted: state.totalAnswersCompleted - 1,
+        totalProgress:
+          ((state.totalAnswersCompleted - 1) / action.payload) * 100,
+      };
+    }
+    case "f": {
+      return {
+        ...state,
+        optionsSelected: state.optionsSelected - 1,
+      };
+    }
+    default: {
+      return {
+        ...state,
+      };
+    }
+  }
+}
 
 export default function SurveyPage() {
   const [activeQuestion, setActiveQuestion] = useState(1);
   const [isChecked, setIsChecked] = useState(false);
   const [questions, setQuestions] = useState();
+  const [state, dispatch] = useReducer(reducerfunction, {
+    totalAnswersCompleted: 0,
+    optionsSelected: 0,
+    totalProgress: 0,
+  });
+
   const navigate = useNavigate();
   let surveypath = useHref();
 
@@ -29,15 +85,19 @@ export default function SurveyPage() {
     });
 
     const inputs = document.querySelectorAll(
-      `#question-${activeQuestion+1} input`
+      `#question-${activeQuestion + 1} input`
     );
+
     let checkFound = false;
+    let currentOptionsSelected = 0;
     inputs.forEach((value) => {
       if (value.checked) {
         checkFound = true;
-        return;
+        currentOptionsSelected = currentOptionsSelected + 1;
       }
     });
+    dispatch({ type: "a", payload: currentOptionsSelected });
+
     if (checkFound) {
       setIsChecked(true);
     } else {
@@ -55,15 +115,19 @@ export default function SurveyPage() {
     });
 
     const inputs = document.querySelectorAll(
-      `#question-${activeQuestion-1} input`
+      `#question-${activeQuestion - 1} input`
     );
+
     let checkFound = false;
+    let currentOptionsSelected = 0;
     inputs.forEach((value) => {
       if (value.checked) {
         checkFound = true;
-        return;
+        currentOptionsSelected = currentOptionsSelected + 1;
       }
     });
+    dispatch({ type: "b", payload: currentOptionsSelected });
+
     if (checkFound) {
       setIsChecked(true);
     } else {
@@ -73,11 +137,26 @@ export default function SurveyPage() {
 
   const optionClickHandler = (e) => {
     if (e.target.checked) {
-      setIsChecked(true);
+      if (!isChecked) {
+        setIsChecked(true);
+      }
+
+      if (state.optionsSelected === 0) {
+        dispatch({ type: "c", payload: questions.question.length });
+      }
+
+      dispatch({ type: "d" });
     } else {
+      if (state.optionsSelected === 1) {
+        dispatch({ type: "e", payload: questions.question.length });
+      }
+
+      dispatch({ type: "f" });
+
       const inputs = document.querySelectorAll(
         `#question-${activeQuestion} input`
       );
+
       let checkFound = false;
       inputs.forEach((value) => {
         if (value.checked) {
@@ -85,6 +164,7 @@ export default function SurveyPage() {
           return;
         }
       });
+
       if (!checkFound) {
         setIsChecked(false);
       }
@@ -110,68 +190,89 @@ export default function SurveyPage() {
     }
   }, [activeQuestion, questions]);
 
+  console.log(
+    state.totalAnswersCompleted,
+    state.optionsSelected,
+    state.totalProgress
+  );
   console.log(questions);
 
   return (
     questions && (
-      <div className="container">
-        <Header title={questions.title} classes="my-5" />
-        <form>
-          <div className="row justify-content-center">
-            <div className="col-8">
-              {questions &&
-                questions.question.map((question) => (
-                  <div
-                    key={question.questionno}
-                    className="row d-none"
-                    id={`question-${question.questionno}`}
-                  >
-                    <h2 className="text-center py-5 fw-light">
-                      {question.questionname}
-                    </h2>
-                    {question.options.map((option) => (
-                      <div key={option} className="col-6 mb-3">
-                        <input
-                          type="checkbox"
-                          className="btn-check"
-                          id={option}
-                          autoComplete="off"
-                          onClick={optionClickHandler}
-                        />
-                        <label
-                          className="btn btn-outline-primary w-100 rounded-pill p-2"
-                          htmlFor={option}
-                        >
-                          {option}
-                        </label>
-                      </div>
-                    ))}
+      <>
+        <div
+          className="progress"
+          role="progressbar"
+          aria-label="Animated striped example"
+          aria-valuenow="75"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        >
+          <div
+            className="progress-bar progress-bar-striped progress-bar-animated"
+            style={{ width: `${state.totalProgress}%` }}
+          ></div>
+        </div>
+
+        <div className="container">
+          <Header title={questions.title} classes="my-5 questions-heading" />
+          <form>
+            <div className="row justify-content-center">
+              <div className="col-8">
+                {questions &&
+                  questions.question.map((question) => (
+                    <div
+                      key={question.questionno}
+                      className="row d-none"
+                      id={`question-${question.questionno}`}
+                    >
+                      <h2 className="text-center py-5 fw-light">
+                        {question.questionname}
+                      </h2>
+                      {question.options.map((option) => (
+                        <div key={option} className="col-6 mb-3">
+                          <input
+                            type="checkbox"
+                            className="btn-check"
+                            id={option}
+                            autoComplete="off"
+                            onClick={optionClickHandler}
+                          />
+                          <label
+                            className="btn btn-outline-primary w-100 rounded-pill p-2"
+                            htmlFor={option}
+                          >
+                            {option}
+                          </label>
+                        </div>
+                      ))}
+                    </div>
+                  ))}
+                <div className="row mt-4">
+                  <div className="col-12 text-center">
+                    <button
+                      type="button"
+                      class="btn btn-outline-danger me-2 px-5"
+                      onClick={prevQuestion}
+                      disabled={activeQuestion === 1 ? true : false}
+                    >
+                      Back a step
+                    </button>
+                    <button
+                      type="button"
+                      className="btn btn-danger px-5"
+                      onClick={nextQuestion}
+                      disabled={!isChecked}
+                    >
+                      Next question
+                    </button>
                   </div>
-                ))}
-              <div className="row mt-4">
-                <div className="col-12 text-center">
-                  <button
-                    type="button"
-                    className="btn btn-warning me-2 p-3"
-                    onClick={prevQuestion}
-                    disabled={activeQuestion === 1 ? true : false}
-                  >
-                    <i className="fa-solid fa-arrow-left"></i>
-                  </button>
-                  <button
-                    type="button"
-                    className="btn btn-warning p-3"
-                    onClick={nextQuestion}
-                    disabled={!isChecked}
-                  >
-                    <i className="fa-solid fa-arrow-right"></i>
-                  </button>
                 </div>
               </div>
             </div>
-          </div>
-        </form>
-      </div>
+          </form>
+        </div>
+      </>
     )
   );
 }

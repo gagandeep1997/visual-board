@@ -64,7 +64,6 @@
   top: 22%;
 }
 
-.custom-button {
-  border: 1px solid #333;
-  border-radius: 50%;
+.questions-heading {
+  font-family: "Poppins";
 }
