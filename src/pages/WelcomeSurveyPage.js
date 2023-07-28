@@ -1,10 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import healthGif from "../assests/images/self-love.gif";
 import careerGif from "../assests/images/path.gif";
 import travelGif from "../assests/images/airplane.gif";
 import moneyGif from "../assests/images/euro.gif";
 import happyGif from "../assests/images/happy.gif";
+import Card from "../components/Card";
 
 export default function WelcomeSurveyPage() {
   return (
@@ -14,51 +14,36 @@ export default function WelcomeSurveyPage() {
           <p className="survey-text fw-bold position-absolute border rounded-circle border-secondary">
             Go to Survey Questions{" "}
           </p>
-          <Link to="/health">
-            <img
-              src={healthGif}
-              className="position-absolute health-gif"
-              alt="123"
-              width="100px"
-              height="100px"
-            />
-          </Link>
-          <Link to="/career">
-            <img
-              src={careerGif}
-              className="position-absolute career-gif"
-              alt="123"
-              width="100px"
-              height="100px"
-            />
-          </Link>
-          <Link to="/travel">
-            <img
-              src={travelGif}
-              className="position-absolute travel-gif"
-              alt="123"
-              width="100px"
-              height="100px"
-            />
-          </Link>
-          <Link to="/money">
-            <img
-              src={moneyGif}
-              className="position-absolute money-gif"
-              alt="123"
-              width="100px"
-              height="100px"
-            />
-          </Link>
-          <Link to="/happy">
-            <img
-              src={happyGif}
-              className="position-absolute happy-gif"
-              alt="123"
-              width="100px"
-              height="100px"
-            />
-          </Link>
+          <Card
+            imageSrc={healthGif}
+            link="/health"
+            classes="position-absolute health-gif"
+            title="Health"
+          />
+          <Card
+            imageSrc={careerGif}
+            link="/career"
+            classes="position-absolute career-gif"
+            title="Career"
+          />
+          <Card
+            imageSrc={travelGif}
+            link="/travel"
+            classes="position-absolute travel-gif"
+            title="Travel"
+          />
+          <Card
+            imageSrc={moneyGif}
+            link="/moneyGif"
+            classes="position-absolute money-gif"
+            title="Money"
+          />
+          <Card
+            imageSrc={happyGif}
+            link="/happy"
+            classes="position-absolute happy-gif"
+            title="Happy"
+          />
         </div>
       </div>
     </div>

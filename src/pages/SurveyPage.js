@@ -4,19 +4,13 @@ import Header from "../components/Header";
 
 function reducerfunction(state, action) {
   switch (action.type) {
-    case "a": {
+    case "updateOptionsSelected": {
       return {
         ...state,
         optionsSelected: action.payload,
       };
     }
-    case "b": {
-      return {
-        ...state,
-        optionsSelected: action.payload,
-      };
-    }
-    case "c": {
+    case "increaseAnsCompleted": {
       return {
         ...state,
         totalAnswersCompleted: state.totalAnswersCompleted + 1,
@@ -24,13 +18,13 @@ function reducerfunction(state, action) {
           ((state.totalAnswersCompleted + 1) / action.payload) * 100,
       };
     }
-    case "d": {
+    case "increaseNoOfOptionsSelected": {
       return {
         ...state,
         optionsSelected: state.optionsSelected + 1,
       };
     }
-    case "e": {
+    case "decreaseAnsCompleted": {
       return {
         ...state,
         totalAnswersCompleted: state.totalAnswersCompleted - 1,
@@ -38,7 +32,7 @@ function reducerfunction(state, action) {
           ((state.totalAnswersCompleted - 1) / action.payload) * 100,
       };
     }
-    case "f": {
+    case "decreaseNoOfOptionsSelected": {
       return {
         ...state,
         optionsSelected: state.optionsSelected - 1,
@@ -96,7 +90,10 @@ export default function SurveyPage() {
         currentOptionsSelected = currentOptionsSelected + 1;
       }
     });
-    dispatch({ type: "a", payload: currentOptionsSelected });
+    dispatch({
+      type: "updateOptionsSelected",
+      payload: currentOptionsSelected,
+    });
 
     if (checkFound) {
       setIsChecked(true);
@@ -126,7 +123,10 @@ export default function SurveyPage() {
         currentOptionsSelected = currentOptionsSelected + 1;
       }
     });
-    dispatch({ type: "b", payload: currentOptionsSelected });
+    dispatch({
+      type: "updateOptionsSelected",
+      payload: currentOptionsSelected,
+    });
 
     if (checkFound) {
       setIsChecked(true);
@@ -142,16 +142,22 @@ export default function SurveyPage() {
       }
 
       if (state.optionsSelected === 0) {
-        dispatch({ type: "c", payload: questions.question.length });
+        dispatch({
+          type: "increaseAnsCompleted",
+          payload: questions.question.length,
+        });
       }
 
-      dispatch({ type: "d" });
+      dispatch({ type: "increaseNoOfOptionsSelected" });
     } else {
       if (state.optionsSelected === 1) {
-        dispatch({ type: "e", payload: questions.question.length });
+        dispatch({
+          type: "decreaseAnsCompleted",
+          payload: questions.question.length,
+        });
       }
 
-      dispatch({ type: "f" });
+      dispatch({ type: "decreaseNoOfOptionsSelected" });
 
       const inputs = document.querySelectorAll(
         `#question-${activeQuestion} input`
@@ -215,7 +221,7 @@ export default function SurveyPage() {
         </div>
 
         <div className="container">
-          <Header title={questions.title} classes="my-5 questions-heading" />
+          <Header title={questions.title} classes="category-heading" />
           <form>
             <div className="row justify-content-center">
               <div className="col-8">
@@ -226,11 +232,11 @@ export default function SurveyPage() {
                       className="row d-none"
                       id={`question-${question.questionno}`}
                     >
-                      <h2 className="text-center py-5 fw-light">
+                      <h2 className="question-heading text-center py-5 fw-light">
                         {question.questionname}
                       </h2>
                       {question.options.map((option) => (
-                        <div key={option} className="col-6 mb-3">
+                        <div key={option} className="col-6 my-3">
                           <input
                             type="checkbox"
                             className="btn-check"
@@ -239,7 +245,7 @@ export default function SurveyPage() {
                             onClick={optionClickHandler}
                           />
                           <label
-                            className="btn btn-outline-primary w-100 rounded-pill p-2"
+                            className="btn btn-outline-primary w-100 rounded-pill p-2 fs-3"
                             htmlFor={option}
                           >
                             {option}
@@ -248,11 +254,11 @@ export default function SurveyPage() {
                       ))}
                     </div>
                   ))}
-                <div className="row mt-4">
+                <div className="row mt-5">
                   <div className="col-12 text-center">
                     <button
                       type="button"
-                      class="btn btn-outline-danger me-2 px-5"
+                      class="btn btn-outline-danger me-3 px-5 fs-3"
                       onClick={prevQuestion}
                       disabled={activeQuestion === 1 ? true : false}
                     >
@@ -260,7 +266,7 @@ export default function SurveyPage() {
                     </button>
                     <button
                       type="button"
-                      className="btn btn-danger px-5"
+                      className="btn btn-danger px-5 fs-3"
                       onClick={nextQuestion}
                       disabled={!isChecked}
                     >
