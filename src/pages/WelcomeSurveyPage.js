@@ -8,7 +8,7 @@ import Card from "../components/Card";
 
 export default function WelcomeSurveyPage() {
   return (
-    <div className="container survey-page">
+    <div className="container">
       <div className="row">
         <div className="col-12">
           <p className="survey-text fw-bold position-absolute border rounded-circle border-secondary">

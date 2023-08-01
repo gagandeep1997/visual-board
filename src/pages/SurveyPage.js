@@ -206,77 +206,82 @@ export default function SurveyPage() {
   return (
     questions && (
       <>
-        <div
-          className="progress"
-          role="progressbar"
-          aria-label="Animated striped example"
-          aria-valuenow="75"
-          aria-valuemin="0"
-          aria-valuemax="100"
-        >
-          <div
-            className="progress-bar progress-bar-striped progress-bar-animated"
-            style={{ width: `${state.totalProgress}%` }}
-          ></div>
-        </div>
-
-        <div className="container">
-          <Header title={questions.title} classes="category-heading" />
-          <form>
-            <div className="row justify-content-center">
-              <div className="col-8">
-                {questions &&
-                  questions.question.map((question) => (
-                    <div
-                      key={question.questionno}
-                      className="row d-none"
-                      id={`question-${question.questionno}`}
-                    >
-                      <h2 className="question-heading text-center py-5 fw-light">
-                        {question.questionname}
-                      </h2>
-                      {question.options.map((option) => (
-                        <div key={option} className="col-6 my-3">
-                          <input
-                            type="checkbox"
-                            className="btn-check"
-                            id={option}
-                            autoComplete="off"
-                            onClick={optionClickHandler}
-                          />
-                          <label
-                            className="btn btn-outline-primary w-100 rounded-pill p-2 fs-3"
-                            htmlFor={option}
-                          >
-                            {option}
-                          </label>
+        <div className="container-fluid survey-page">
+          <div className="row">
+            <div
+              className="progress p-0"
+              role="progressbar"
+              aria-label="Animated striped example"
+              aria-valuenow="75"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              <div
+                className="progress-bar progress-bar-striped progress-bar-animated"
+                style={{ width: `${state.totalProgress}%` }}
+              ></div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="container">
+              <Header title={questions.title} classes="category-heading" />
+              <form>
+                <div className="row justify-content-center">
+                  <div className="col-8">
+                    {questions &&
+                      questions.question.map((question) => (
+                        <div
+                          key={question.id}
+                          className="row d-none"
+                          id={`question-${question.questionno}`}
+                        >
+                          <h2 className="question-heading text-center py-5 fw-light">
+                            {question.questionname}
+                          </h2>
+                          {question.options.map((option) => (
+                            <div key={option} className="col-6 my-3">
+                              <input
+                                type="checkbox"
+                                className="btn-check"
+                                id={option}
+                                autoComplete="off"
+                                onClick={optionClickHandler}
+                              />
+                              <label
+                                className="btn btn-outline-dark w-100 rounded-pill p-2 fs-3"
+                                htmlFor={option}
+                              >
+                                {option}
+                              </label>
+                            </div>
+                          ))}
                         </div>
                       ))}
+                    <div className="row mt-5">
+                      <div className="col-12 text-center">
+                        <button
+                          type="button"
+                          className="btn btn-outline-danger me-3 px-5 fs-3"
+                          onClick={prevQuestion}
+                          disabled={activeQuestion === 1 ? true : false}
+                        >
+                          Back a step
+                        </button>
+                        <button
+                          type="button"
+                          className="btn btn-danger px-5 fs-3"
+                          onClick={nextQuestion}
+                          disabled={!isChecked}
+                        >
+                          Next question
+                        </button>
+                      </div>
                     </div>
-                  ))}
-                <div className="row mt-5">
-                  <div className="col-12 text-center">
-                    <button
-                      type="button"
-                      class="btn btn-outline-danger me-3 px-5 fs-3"
-                      onClick={prevQuestion}
-                      disabled={activeQuestion === 1 ? true : false}
-                    >
-                      Back a step
-                    </button>
-                    <button
-                      type="button"
-                      className="btn btn-danger px-5 fs-3"
-                      onClick={nextQuestion}
-                      disabled={!isChecked}
-                    >
-                      Next question
-                    </button>
                   </div>
                 </div>
-              </div>
+              </form>
             </div>
-          </form>
+          </div>
         </div>
       </>
     )
