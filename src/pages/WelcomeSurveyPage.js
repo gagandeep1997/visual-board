@@ -34,7 +34,7 @@ export default function WelcomeSurveyPage() {
           />
           <Card
             imageSrc={moneyGif}
-            link="/moneyGif"
+            link="/money"
             classes="position-absolute money-gif"
             title="Money"
           />
