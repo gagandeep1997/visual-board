@@ -13,15 +13,14 @@ export default function WelcomePage() {
         </div>
       </div>
       <h1 className="welcome-heading fw-light text-center text-dark">
-        Are you a Day Dreamer or a Night Dreamer?
+        Are you a Dreamer?
       </h1>
       <div
         className="d-flex flex-column flex-md-row btn-container justify-content-evenly align-items-center"
         role="list"
       >
-        <Button title="Yes" url="/homepage" btnType="btn-info" />
-        <Button title="हा" url="/homepage" btnType="btn-warning fs-2" />
-        <Button title="Definitely" url="/homepage" btnType="btn-dark" />
+        <Button title="Yes" url="/homepage" btnType="btn-dark" />
+        <Button title="Of course" url="/homepage" btnType="btn-dark fs-2" />
       </div>
     </div>
   );

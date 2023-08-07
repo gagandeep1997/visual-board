@@ -21,18 +21,6 @@
         "questionno": 3,
         "questionname": "How do you plan to advance in your career?",
         "options": ["option 9", "option 10", "option 11", "option 12"]
-      },
-      {
-        "id": "q4",
-        "questionno": 4,
-        "questionname": "What education or training do I need to fulfill my career goals?",
-        "options": ["option 13", "option 14", "option 15", "option 16"]
-      },
-      {
-        "id": "q5",
-        "questionno": 5,
-        "questionname": "What might you be interested in learning in your field?",
-        "options": ["option 17", "option 18", "option 19", "option 20"]
       }
     ]
   },
@@ -44,32 +32,20 @@
       {
         "id": "q1",
         "questionno": 1,
-        "questionname": "Where do you see yourself in the future?",
-        "options": ["option 1", "option 2", "option 3", "option 4"]
+        "questionname": "What is the importance of money in your life?",
+        "options": ["Education and Opportunities", "Security and Stability"]
       },
       {
         "id": "q2",
         "questionno": 2,
-        "questionname": "Are you planning to pursue additional education?",
-        "options": ["option 5", "option 6", "option 7", "option 8"]
+        "questionname": "Can money buy happiness?",
+        "options": ["Yes", "No"]
       },
       {
         "id": "q3",
         "questionno": 3,
-        "questionname": "How do you plan to advance in your career?",
-        "options": ["option 9", "option 10", "option 11", "option 12"]
-      },
-      {
-        "id": "q4",
-        "questionno": 4,
-        "questionname": "What education or training do I need to fulfill my career goals?",
-        "options": ["option 13", "option 14", "option 15", "option 16"]
-      },
-      {
-        "id": "q5",
-        "questionno": 5,
-        "questionname": "What might you be interested in learning in your field?",
-        "options": ["option 17", "option 18", "option 19", "option 20"]
+        "questionname": "Money? in digitas for you",
+        "options": ["Increment", "Increment + Bonus"]
       }
     ]
   },
@@ -81,32 +57,26 @@
       {
         "id": "q1",
         "questionno": 1,
-        "questionname": "Where do you see yourself in the future?",
-        "options": ["option 1", "option 2", "option 3", "option 4"]
+        "questionname": "What healthy habits can I adopt to improve my overall well-being?",
+        "options": [
+          "Getting enough sleep",
+          "Practicing stress-reducing activities"
+        ]
       },
       {
         "id": "q2",
         "questionno": 2,
-        "questionname": "Are you planning to pursue additional education?",
-        "options": ["option 5", "option 6", "option 7", "option 8"]
+        "questionname": "How can I make exercise a regular part of my routine and enjoy it? ",
+        "options": [
+          "By finding a form of physical activity that you enjoy",
+          "Scheduling workouts in your calendar"
+        ]
       },
       {
         "id": "q3",
         "questionno": 3,
-        "questionname": "How do you plan to advance in your career?",
-        "options": ["option 9", "option 10", "option 11", "option 12"]
-      },
-      {
-        "id": "q4",
-        "questionno": 4,
-        "questionname": "What education or training do I need to fulfill my career goals?",
-        "options": ["option 13", "option 14", "option 15", "option 16"]
-      },
-      {
-        "id": "q5",
-        "questionno": 5,
-        "questionname": "What might you be interested in learning in your field?",
-        "options": ["option 17", "option 18", "option 19", "option 20"]
+        "questionname": "What changes can I make to my diet to support my health goals and feel energized?",
+        "options": ["Eating a balanced diet", "Stay hydrated"]
       }
     ]
   },
@@ -118,32 +88,20 @@
       {
         "id": "q1",
         "questionno": 1,
-        "questionname": "Where do you see yourself in the future?",
-        "options": ["option 1", "option 2", "option 3", "option 4"]
+        "questionname": "Where do I want to travel and what experiences do I want to have?",
+        "options": ["Explore a new city", "Go on an adventure"]
       },
       {
         "id": "q2",
         "questionno": 2,
-        "questionname": "Are you planning to pursue additional education?",
-        "options": ["option 5", "option 6", "option 7", "option 8"]
+        "questionname": "What steps can I take to make my travel dreams a reality?",
+        "options": ["Equals to my Manager's salary", "Trip will be on Charity"]
       },
       {
         "id": "q3",
         "questionno": 3,
-        "questionname": "How do you plan to advance in your career?",
-        "options": ["option 9", "option 10", "option 11", "option 12"]
-      },
-      {
-        "id": "q4",
-        "questionno": 4,
-        "questionname": "What education or training do I need to fulfill my career goals?",
-        "options": ["option 13", "option 14", "option 15", "option 16"]
-      },
-      {
-        "id": "q5",
-        "questionno": 5,
-        "questionname": "What might you be interested in learning in your field?",
-        "options": ["option 17", "option 18", "option 19", "option 20"]
+        "questionname": "Have you ever experienced Work Your World facility by Publicis Groupe ?",
+        "options": ["Yes", "Definitely"]
       }
     ]
   },
@@ -169,18 +127,6 @@
         "questionno": 3,
         "questionname": "How do you plan to advance in your career?",
         "options": ["option 9", "option 10", "option 11", "option 12"]
-      },
-      {
-        "id": "q4",
-        "questionno": 4,
-        "questionname": "What education or training do I need to fulfill my career goals?",
-        "options": ["option 13", "option 14", "option 15", "option 16"]
-      },
-      {
-        "id": "q5",
-        "questionno": 5,
-        "questionname": "What might you be interested in learning in your field?",
-        "options": ["option 17", "option 18", "option 19", "option 20"]
       }
     ]
   }

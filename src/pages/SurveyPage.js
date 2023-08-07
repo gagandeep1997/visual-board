@@ -252,7 +252,7 @@ export default function SurveyPage() {
                             {question.questionname}
                           </h2>
                           {question.options.map((option) => (
-                            <div key={option} className="col-6 my-3">
+                            <div key={option} className="col-12 my-3">
                               <input
                                 type="checkbox"
                                 className="btn-check"
@@ -261,7 +261,7 @@ export default function SurveyPage() {
                                 onClick={optionClickHandler}
                               />
                               <label
-                                className="btn btn-outline-dark w-100 rounded-pill p-2 fs-3"
+                                className="btn btn-outline-dark w-50 rounded-pill p-2 fs-3"
                                 htmlFor={option}
                               >
                                 {option}
