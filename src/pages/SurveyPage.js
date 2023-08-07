@@ -3,8 +3,8 @@ import { useNavigate, useHref } from "react-router-dom";
 import Header from "../components/Header";
 import backgroundHappy from "../assests/images/happy.jpg";
 import backgroundTravel from "../assests/images/travel1.avif";
-import backgroundHealth from "../assests/images/health1.jpg";
-import backgroundCareer from "../assests/images/career1.jpg";
+import backgroundHealth from "../assests/images/health2.jpeg";
+import backgroundCareer from "../assests/images/career2.png";
 import backgroundMoney from "../assests/images/money.jpg";
 
 function reducerfunction(state, action) {
