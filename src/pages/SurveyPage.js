@@ -202,24 +202,27 @@ export default function SurveyPage() {
     }
   }, [activeQuestion, questions]);
 
-  if(questions){
-    if(questions.title === "Career"){
+  if (questions) {
+    if (questions.title === "Career") {
       currentBackgroundImage = backgroundCareer;
-    } else if(questions.title === "Money"){
+    } else if (questions.title === "Money") {
       currentBackgroundImage = backgroundMoney;
-    } else if(questions.title === "Health"){
+    } else if (questions.title === "Health") {
       currentBackgroundImage = backgroundHealth;
-    } else if(questions.title === "Travel"){
+    } else if (questions.title === "Travel") {
       currentBackgroundImage = backgroundTravel;
     } else {
       currentBackgroundImage = backgroundHappy;
-    } 
+    }
   }
 
   return (
     questions && (
       <>
-        <div className="container-fluid survey-page" style={{backgroundImage: `url(${currentBackgroundImage})`}}>
+        <div
+          className="container-fluid survey-page"
+          style={{ backgroundImage: `url(${currentBackgroundImage})` }}
+        >
           <div className="row">
             <div
               className="progress p-0"
@@ -236,7 +239,7 @@ export default function SurveyPage() {
             </div>
           </div>
           <div className="row">
-            <div className="container">
+            <div className="container new-bg-light">
               <Header title={questions.title} classes="category-heading" />
               <form>
                 <div className="row justify-content-center">
@@ -251,23 +254,29 @@ export default function SurveyPage() {
                           <h2 className="question-heading text-center py-5 fw-light">
                             {question.questionname}
                           </h2>
-                          {question.options.map((option) => (
-                            <div key={option} className="col-12 my-3">
-                              <input
-                                type="checkbox"
-                                className="btn-check"
-                                id={option}
-                                autoComplete="off"
-                                onClick={optionClickHandler}
-                              />
-                              <label
-                                className="btn btn-outline-dark w-50 rounded-pill p-2 fs-3"
-                                htmlFor={option}
-                              >
-                                {option}
-                              </label>
+                          <div className="row justify-content-center">
+                            <div className="col-6">
+                              <div className="row">
+                                {question.options.map((option) => (
+                                  <div key={option} className="col-12 my-3">
+                                    <input
+                                      type="checkbox"
+                                      className="btn-check"
+                                      id={option}
+                                      autoComplete="off"
+                                      onClick={optionClickHandler}
+                                    />
+                                    <label
+                                      className="btn btn-outline-dark w-100 rounded-pill p-2 fs-3"
+                                      htmlFor={option}
+                                    >
+                                      {option}
+                                    </label>
+                                  </div>
+                                ))}
+                              </div>
                             </div>
-                          ))}
+                          </div>
                         </div>
                       ))}
                     <div className="row mt-5">
