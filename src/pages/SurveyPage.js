@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useReducer } from "react";
-import { useNavigate, useHref } from "react-router-dom";
+import { useHref } from "react-router-dom";
 import Header from "../components/Header";
 import backgroundHappy from "../assests/images/happy.jpg";
 import backgroundTravel from "../assests/images/travel1.avif";
 import backgroundHealth from "../assests/images/health2.jpeg";
 import backgroundCareer from "../assests/images/career2.png";
 import backgroundMoney from "../assests/images/money.jpg";
+import FinalPage from "./FinalPage";
 
 function reducerfunction(state, action) {
   switch (action.type) {
@@ -55,13 +56,14 @@ export default function SurveyPage() {
   const [activeQuestion, setActiveQuestion] = useState(1);
   const [isChecked, setIsChecked] = useState(false);
   const [questions, setQuestions] = useState();
+  const [showFinalPage, setShowFinalPage] = useState(false);
   const [state, dispatch] = useReducer(reducerfunction, {
     totalAnswersCompleted: 0,
     optionsSelected: 0,
     totalProgress: 0,
   });
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   let surveypath = useHref();
   let currentBackgroundImage;
 
@@ -73,7 +75,9 @@ export default function SurveyPage() {
 
   const nextQuestion = () => {
     if (activeQuestion === questions.question.length) {
-      navigate("../surveyhome");
+      // navigate("../surveyhome");
+      setShowFinalPage(true);
+      return;
     }
 
     document
@@ -219,92 +223,97 @@ export default function SurveyPage() {
   return (
     questions && (
       <>
-        <div
-          className="container-fluid survey-page"
-          style={{ backgroundImage: `url(${currentBackgroundImage})` }}
-        >
-          <div className="row">
-            <div
-              className="progress p-0"
-              role="progressbar"
-              aria-label="Animated striped example"
-              aria-valuenow="75"
-              aria-valuemin="0"
-              aria-valuemax="100"
-            >
+        {!showFinalPage && (
+          <div
+            className="container-fluid survey-page"
+            style={{ backgroundImage: `url(${currentBackgroundImage})` }}
+          >
+            <div className="row">
               <div
-                className="progress-bar progress-bar-striped progress-bar-animated"
-                style={{ width: `${state.totalProgress}%` }}
-              ></div>
+                className="progress p-0"
+                role="progressbar"
+                aria-label="Animated striped example"
+                aria-valuenow="75"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                <div
+                  className="progress-bar progress-bar-striped progress-bar-animated"
+                  style={{ width: `${state.totalProgress}%` }}
+                ></div>
+              </div>
             </div>
-          </div>
-          <div className="row">
-            <div className="container new-bg-light">
-              <Header title={questions.title} classes="category-heading" />
-              <form>
-                <div className="row justify-content-center">
-                  <div className="col-8">
-                    {questions &&
-                      questions.question.map((question) => (
-                        <div
-                          key={question.id}
-                          className="row d-none"
-                          id={`question-${question.questionno}`}
-                        >
-                          <h2 className="question-heading text-center py-5 fw-light">
-                            {question.questionname}
-                          </h2>
-                          <div className="row justify-content-center">
-                            <div className="col-6">
-                              <div className="row">
-                                {question.options.map((option) => (
-                                  <div key={option} className="col-12 my-3">
-                                    <input
-                                      type="checkbox"
-                                      className="btn-check"
-                                      id={option}
-                                      autoComplete="off"
-                                      onClick={optionClickHandler}
-                                    />
-                                    <label
-                                      className="btn btn-outline-dark w-100 rounded-pill p-2 fs-3"
-                                      htmlFor={option}
-                                    >
-                                      {option}
-                                    </label>
-                                  </div>
-                                ))}
+            <div className="row">
+              <div className="container new-bg-light">
+                <Header title={questions.title} classes="category-heading" />
+                <form>
+                  <div className="row justify-content-center">
+                    <div className="col-8">
+                      {questions &&
+                        questions.question.map((question) => (
+                          <div
+                            key={question.id}
+                            className="row d-none"
+                            id={`question-${question.questionno}`}
+                          >
+                            <h2 className="question-heading text-center py-5 fw-light">
+                              {question.questionname}
+                            </h2>
+                            <div className="row justify-content-center">
+                              <div className="col-6">
+                                <div className="row">
+                                  {question.options.map((option) => (
+                                    <div key={option} className="col-12 my-3">
+                                      <input
+                                        type="checkbox"
+                                        className="btn-check"
+                                        id={option}
+                                        autoComplete="off"
+                                        onClick={optionClickHandler}
+                                      />
+                                      <label
+                                        className="btn btn-outline-dark w-100 rounded-pill p-2 fs-3"
+                                        htmlFor={option}
+                                      >
+                                        {option}
+                                      </label>
+                                    </div>
+                                  ))}
+                                </div>
                               </div>
                             </div>
                           </div>
+                        ))}
+                      <div className="row mt-5">
+                        <div className="col-12 text-center">
+                          <button
+                            type="button"
+                            className="btn btn-outline-danger me-3 px-5 fs-3"
+                            onClick={prevQuestion}
+                            disabled={activeQuestion === 1 ? true : false}
+                          >
+                            Back a step
+                          </button>
+                          <button
+                            type="button"
+                            className="btn btn-danger px-5 fs-3"
+                            onClick={nextQuestion}
+                            disabled={!isChecked}
+                          >
+                            {activeQuestion !== questions.question.length
+                              ? "Next question"
+                              : "Submit"}
+                          </button>
                         </div>
-                      ))}
-                    <div className="row mt-5">
-                      <div className="col-12 text-center">
-                        <button
-                          type="button"
-                          className="btn btn-outline-danger me-3 px-5 fs-3"
-                          onClick={prevQuestion}
-                          disabled={activeQuestion === 1 ? true : false}
-                        >
-                          Back a step
-                        </button>
-                        <button
-                          type="button"
-                          className="btn btn-danger px-5 fs-3"
-                          onClick={nextQuestion}
-                          disabled={!isChecked}
-                        >
-                          Next question
-                        </button>
                       </div>
                     </div>
                   </div>
-                </div>
-              </form>
+                </form>
+              </div>
             </div>
           </div>
-        </div>
+        )}
+        {showFinalPage && <FinalPage />}
       </>
     )
   );

@@ -186,3 +186,64 @@
     width: 100%;
   }
 }
+
+.animation {
+  overflow-x: hidden;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.animation::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+  z-index: 0;
+  opacity: 0.5;
+  height: 100vh;
+}
+
+.animation div {
+  position: relative;
+  z-index: 1;
+}
+
+.card-rtl {
+  left: 43%;
+  position: relative;
+  animation: mymove1 2s ease-in-out;
+}
+
+@keyframes mymove1 {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: 43%;
+  }
+}
+
+.card-ltr {
+  left: 5%;
+  position: relative;
+  animation: mymove2 2s ease-in-out;
+}
+
+@keyframes mymove2 {
+  0% {
+    left: -50%;
+  }
+  100% {
+    left: 5%;
+  }
+}
+
+.message-container {
+  margin: 9rem 0;
+}
