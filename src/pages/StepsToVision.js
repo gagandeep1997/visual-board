@@ -4,6 +4,7 @@ export default function StepsToVision({
   stepsToVision,
   setShowFinalPage,
   setShowStepsToVisionBoardPage,
+  clickHereMessage,
 }) {
   const showFinalPageClickHandler = () => {
     setShowFinalPage(true);
@@ -25,9 +26,9 @@ export default function StepsToVision({
         ))}
       </div>
       <div className="row justify-content-end click-here-msg">
-        <div className="col-3 p-0">
-          <p className="fw-bold">
-            If you are not happy please{" "}
+        <div className="col-auto p-0">
+          <p className="fw-bold me-5">
+            {clickHereMessage} please {" "}
             <span className="fs-1 right-finger">&#128073;&#127997;</span>
             <span
               className="blink-text ps-2"

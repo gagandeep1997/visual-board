@@ -205,37 +205,24 @@
 }
 
 .animation div {
-  position: relative;
   z-index: 1;
 }
 
-.card-rtl {
-  left: 43%;
-  position: relative;
-  animation: mymove1 2s ease-in-out;
+.card-btt {
+  bottom: 50%;
+  left: 25%;
+  position: absolute;
+  animation: mymove 2s ease-in-out;
 }
 
-@keyframes mymove1 {
+@keyframes mymove {
   0% {
-    left: 100%;
+    bottom: 0%;
+    left: 25%;
   }
   100% {
-    left: 43%;
-  }
-}
-
-.card-ltr {
-  left: 5%;
-  position: relative;
-  animation: mymove2 2s ease-in-out;
-}
-
-@keyframes mymove2 {
-  0% {
-    left: -50%;
-  }
-  100% {
-    left: 5%;
+    bottom: 50%;
+    left: 25%;
   }
 }
 
@@ -266,6 +253,7 @@
 .blink-text {
   color: #000;
   font-size: 1.8rem;
+  cursor: pointer;
   animation: blinkingText 2s infinite;
 }
 

@@ -49,7 +49,9 @@
         "step": "Surround Yourself With Like-Minded People",
         "stepClass": "bg-success"
       }
-    ]
+    ],
+    "clickHereMsg":"To get lots of opportunities to grow your career ",
+    "finalMsg":"Digits has remarkable platfroms to build your career or paise to de hi rahen hai yaar."
   },
   {
     "id": "money",
@@ -101,7 +103,9 @@
         "step": "Surround Yourself With Like-Minded People",
         "stepClass": "bg-success"
       }
-    ]
+    ],
+    "clickHereMsg":"If you are facing money issue ",
+    "finalMsg":"Digitas has lots of money so you can use digitas money as your money to khaao piyo mje karo."
   },
   {
     "id": "health",
@@ -159,7 +163,9 @@
         "step": "Be active",
         "stepClass": "bg-success"
       }
-    ]
+    ],
+    "clickHereMsg":"If you are not feeling healthy ",
+    "finalMsg":"When digitas is providing you bonus every month then you BP, Sugar, Namak, Dhaniya, Mirchi all will be balanced, so don't worry about your health."
   },
   {
     "id": "travel",
@@ -211,7 +217,9 @@
         "step": "Enjoy your trip and don't worry about money",
         "stepClass": "bg-success"
       }
-    ]
+    ],
+    "clickHereMsg":"If you have not planned any trip since long time ",
+    "finalMsg":"Digitas will sponsored a holiday package for you  without taking any money from you, so jaoo jaoo ghoom k aao."
   },
   {
     "id": "happy",
@@ -272,6 +280,8 @@
         "step": "Associate with happy people",
         "stepClass": "bg-success"
       }
-    ]
+    ],
+    "clickHereMsg":"If you are not happy ",
+    "finalMsg":"Digitas will provide you bonus with your salary in every month."
   }
 ]

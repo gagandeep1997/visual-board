@@ -319,9 +319,12 @@ export default function SurveyPage() {
             stepsToVision={questions.steps}
             setShowFinalPage={setShowFinalPage}
             setShowStepsToVisionBoardPage={setShowStepsToVisionBoardPage}
+            clickHereMessage={questions.clickHereMsg}
           />
         )}
-        {!showStepsToVisionBoardPage && showFinalPage && <FinalPage />}
+        {!showStepsToVisionBoardPage && showFinalPage && (
+          <FinalPage finalMessage={questions.finalMsg} />
+        )}
       </>
     )
   );
