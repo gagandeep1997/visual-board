@@ -2,11 +2,12 @@ import React, { useState, useEffect, useReducer } from "react";
 import { useHref } from "react-router-dom";
 import Header from "../components/Header";
 import backgroundHappy from "../assests/images/happy.jpg";
-import backgroundTravel from "../assests/images/travel1.avif";
+import backgroundTravel from "../assests/images/travel1.jpg";
 import backgroundHealth from "../assests/images/health2.jpeg";
-import backgroundCareer from "../assests/images/career2.png";
+import backgroundCareer from "../assests/images/career2.jpg";
 import backgroundMoney from "../assests/images/money.jpg";
 import FinalPage from "./FinalPage";
+import StepsToVision from "./StepsToVision";
 
 function reducerfunction(state, action) {
   switch (action.type) {
@@ -57,13 +58,14 @@ export default function SurveyPage() {
   const [isChecked, setIsChecked] = useState(false);
   const [questions, setQuestions] = useState();
   const [showFinalPage, setShowFinalPage] = useState(false);
+  const [showStepsToVisionBoardPage, setShowStepsToVisionBoardPage] =
+    useState(false);
   const [state, dispatch] = useReducer(reducerfunction, {
     totalAnswersCompleted: 0,
     optionsSelected: 0,
     totalProgress: 0,
   });
 
-  // const navigate = useNavigate();
   let surveypath = useHref();
   let currentBackgroundImage;
 
@@ -75,8 +77,7 @@ export default function SurveyPage() {
 
   const nextQuestion = () => {
     if (activeQuestion === questions.question.length) {
-      // navigate("../surveyhome");
-      setShowFinalPage(true);
+      setShowStepsToVisionBoardPage(true);
       return;
     }
 
@@ -223,7 +224,7 @@ export default function SurveyPage() {
   return (
     questions && (
       <>
-        {!showFinalPage && (
+        {!showFinalPage && !showStepsToVisionBoardPage && (
           <div
             className="container-fluid survey-page"
             style={{ backgroundImage: `url(${currentBackgroundImage})` }}
@@ -313,7 +314,14 @@ export default function SurveyPage() {
             </div>
           </div>
         )}
-        {showFinalPage && <FinalPage />}
+        {showStepsToVisionBoardPage && !showFinalPage && (
+          <StepsToVision
+            stepsToVision={questions.steps}
+            setShowFinalPage={setShowFinalPage}
+            setShowStepsToVisionBoardPage={setShowStepsToVisionBoardPage}
+          />
+        )}
+        {!showStepsToVisionBoardPage && showFinalPage && <FinalPage />}
       </>
     )
   );

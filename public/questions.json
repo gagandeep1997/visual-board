@@ -22,6 +22,33 @@
         "questionname": "The focus on long-term issue, that are hard-to-reverse are the part of?",
         "options": ["Coaching ", "Mentoring"]
       }
+    ],
+    "steps": [
+      {
+        "id": "step1",
+        "step": "Define What You Want in Your Career",
+        "stepClass": "bg-warning"
+      },
+      {
+        "id": "step2",
+        "step": "Remind Yourself of the “Why.",
+        "stepClass": "bg-primary"
+      },
+      {
+        "id": "step3",
+        "step": "Choose 1-3 Big Goals",
+        "stepClass": "bg-secondary"
+      },
+      {
+        "id": "step4",
+        "step": "Break Them Down Into Simple Steps",
+        "stepClass": "bg-danger"
+      },
+      {
+        "id": "step5",
+        "step": "Surround Yourself With Like-Minded People",
+        "stepClass": "bg-success"
+      }
     ]
   },
   {
@@ -46,6 +73,33 @@
         "questionno": 3,
         "questionname": "Money? in digitas for you",
         "options": ["Increment", "Increment + Bonus"]
+      }
+    ],
+    "steps": [
+      {
+        "id": "step1",
+        "step": "Define What You Want in Your Career",
+        "stepClass": "bg-warning"
+      },
+      {
+        "id": "step2",
+        "step": "Remind Yourself of the “Why.",
+        "stepClass": "bg-primary"
+      },
+      {
+        "id": "step3",
+        "step": "Choose 1-3 Big Goals",
+        "stepClass": "bg-secondary"
+      },
+      {
+        "id": "step4",
+        "step": "Break Them Down Into Simple Steps",
+        "stepClass": "bg-danger"
+      },
+      {
+        "id": "step5",
+        "step": "Surround Yourself With Like-Minded People",
+        "stepClass": "bg-success"
       }
     ]
   },
@@ -78,6 +132,33 @@
         "questionname": "What changes can I make to my diet to support my health goals and feel energized?",
         "options": ["Eating a balanced diet", "Stay hydrated"]
       }
+    ],
+    "steps": [
+      {
+        "id": "step1",
+        "step": "Make sleep a priority",
+        "stepClass": "bg-warning"
+      },
+      {
+        "id": "step2",
+        "step": "Avoid screen time before bed",
+        "stepClass": "bg-primary"
+      },
+      {
+        "id": "step3",
+        "step": "Stay hydrated",
+        "stepClass": "bg-secondary"
+      },
+      {
+        "id": "step4",
+        "step": "Consume less salt and sugar",
+        "stepClass": "bg-danger"
+      },
+      {
+        "id": "step5",
+        "step": "Be active",
+        "stepClass": "bg-success"
+      }
     ]
   },
   {
@@ -103,6 +184,33 @@
         "questionname": "Have you ever experienced Work Your World facility by Publicis Groupe ?",
         "options": ["Yes", "Definitely"]
       }
+    ],
+    "steps": [
+      {
+        "id": "step1",
+        "step": "Choose the place",
+        "stepClass": "bg-warning"
+      },
+      {
+        "id": "step2",
+        "step": "Book you tickets",
+        "stepClass": "bg-primary"
+      },
+      {
+        "id": "step3",
+        "step": "Apply your leaves",
+        "stepClass": "bg-secondary"
+      },
+      {
+        "id": "step4",
+        "step": "Pack your bags",
+        "stepClass": "bg-danger"
+      },
+      {
+        "id": "step5",
+        "step": "Enjoy your trip and don't worry about money",
+        "stepClass": "bg-success"
+      }
     ]
   },
   {
@@ -113,20 +221,56 @@
       {
         "id": "q1",
         "questionno": 1,
-        "questionname": "Where do you see yourself in the future?",
-        "options": ["option 1", "option 2", "option 3", "option 4"]
+        "questionname": "What are some ways to achieve happiness in life?",
+        "options": [
+          "relationships with family and friends",
+          "Set and work towards meaningful goals"
+        ]
       },
       {
         "id": "q2",
         "questionno": 2,
-        "questionname": "Are you planning to pursue additional education?",
-        "options": ["option 5", "option 6", "option 7", "option 8"]
+        "questionname": "What are some benefits of pursuing happiness in life?",
+        "options": [
+          "Reduced stress and anxiety",
+          "Increased overall life satis faction"
+        ]
       },
       {
         "id": "q3",
         "questionno": 3,
-        "questionname": "How do you plan to advance in your career?",
-        "options": ["option 9", "option 10", "option 11", "option 12"]
+        "questionname": "What are some tips for cultivating happiness in life?",
+        "options": [
+          "Practice gratitude and mindfulness",
+          "Pursue hobbies or interests that bring joy"
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "id": "step1",
+        "step": "Adopting the Right Attitude",
+        "stepClass": "bg-warning"
+      },
+      {
+        "id": "step2",
+        "step": "Smile a lot",
+        "stepClass": "bg-primary"
+      },
+      {
+        "id": "step3",
+        "step": "Focus on the positives",
+        "stepClass": "bg-secondary"
+      },
+      {
+        "id": "step4",
+        "step": "Creating a Better Mood",
+        "stepClass": "bg-danger"
+      },
+      {
+        "id": "step5",
+        "step": "Associate with happy people",
+        "stepClass": "bg-success"
       }
     ]
   }

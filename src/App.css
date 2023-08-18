@@ -1,3 +1,15 @@
+.bg-secondary {
+  background-color: #9d8f8f !important;
+}
+
+.bg-success {
+  background-color: #079107 !important;
+}
+
+.bg-danger {
+  background-color: red !important;
+}
+
 .welcome {
   background: linear-gradient(
     157deg,
@@ -170,23 +182,6 @@
   z-index: 1;
 }
 
-@media (max-width: 576px) {
-  .btn {
-    width: 30rem;
-  }
-
-  .welcome-heading {
-    font-size: 3rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .btn-container {
-    gap: 2rem;
-    width: 100%;
-  }
-}
-
 .animation {
   overflow-x: hidden;
   background-size: cover;
@@ -246,4 +241,65 @@
 
 .message-container {
   margin: 9rem 0;
+}
+
+.steps-to-vision__heading {
+  margin: 5rem 0 4rem 0;
+  font-size: 4rem;
+  font-family: "Poppins";
+}
+
+.steps-to-vision-container p {
+  font-size: 1.8rem;
+  font-family: "Roboto";
+}
+
+.click-here-msg {
+  margin-top: 5rem;
+}
+
+.right-finger {
+  position: relative;
+  top: 0.3rem;
+}
+
+.blink-text {
+  color: #000;
+  font-size: 1.8rem;
+  animation: blinkingText 2s infinite;
+}
+
+@keyframes blinkingText {
+  0% {
+    color: #10c018;
+  }
+  25% {
+    color: #1056c0;
+  }
+  50% {
+    color: #ef0a1a;
+  }
+  75% {
+    color: #254878;
+  }
+  100% {
+    color: #04a1d5;
+  }
+}
+
+@media (max-width: 576px) {
+  .btn {
+    width: 30rem;
+  }
+
+  .welcome-heading {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .btn-container {
+    gap: 2rem;
+    width: 100%;
+  }
 }
