@@ -1,17 +1,30 @@
 import React from "react";
-import finalcareerimg from "../assests/images/career-final-img.png";
+import { useNavigate } from "react-router-dom";
+import visionBoardImg from "../assests/images/vision-board-final.png";
 
 export default function FinalPage({ finalMessage }) {
-  let borderClass = "border border-dark rounded-pill p-3 w-50";
+  const navigate = useNavigate();
+  let borderClass = "border border-2 border-dark rounded-pill p-3 w-50";
 
   return (
     <div
       className="container-fluid animation"
-      style={{ backgroundImage: `url(${finalcareerimg})` }}
+      style={{ backgroundImage: `url(${visionBoardImg})` }}
     >
       <div className="row message-container">
         <div className={borderClass + " card-btt"}>
-          <h3 className="fw-medium text-center">{finalMessage}</h3>
+          <h3 className="fw-bold text-center">{finalMessage}</h3>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-3">
+          <button
+            type="button"
+            className="btn btn-success btn-lg fw-bold z-1 fs-2 position-absolute back-to-category-btn"
+            onClick={() => navigate("../surveyhome")}
+          >
+            Back to categories <i class="fa-solid fa-arrow-right"></i>
+          </button>
         </div>
       </div>
     </div>

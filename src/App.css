@@ -211,6 +211,7 @@
 .card-btt {
   bottom: 50%;
   left: 25%;
+  background-color: #f9f92882;
   position: absolute;
   animation: mymove 2s ease-in-out;
 }
@@ -243,6 +244,11 @@
 
 .click-here-msg {
   margin-top: 5rem;
+}
+
+.back-to-category-btn {
+  bottom: 5rem;
+  right: 5rem;
 }
 
 .right-finger {
