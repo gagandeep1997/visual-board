@@ -296,4 +296,92 @@
     gap: 2rem;
     width: 100%;
   }
+
+  .survey-text {
+    padding: 2rem;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    font-size: 2.6rem;
+    text-align: center;
+    border-radius: 0 !important;
+    border: none !important;
+  }
+
+  .flip-card-back {
+    background-color: white;
+    color: #000;
+    transform: rotateY(0deg);
+    font-size: 2rem;
+    font-weight: bold;
+    height: 10%;
+    top: 100%;
+  }
+
+  .health-gif {
+    top: 17%;
+    right: 16%;
+  }
+
+  .career-gif {
+    left: 15%;
+    top: 43%;
+  }
+
+  .travel-gif {
+    right: 17%;
+    top: 43%;
+  }
+
+  .money-gif {
+    bottom: 19%;
+    right: 40%;
+  }
+
+  .happy-gif {
+    left: 14%;
+    top: 17%;
+  }
+
+  .btn-option {
+    max-width: 80%;
+  }
+
+  .survey-page {
+    overflow: hidden;
+  }
+
+  .category-heading {
+    margin: 3.8rem 0 3.6rem 0;
+  }
+
+  .animation div {
+    min-width: 70%;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    left: 15%;
+  }
+
+  .steps-to-vision__heading ~ p {
+    width: 75% !important;
+  }
+
+  .steps-to-vision__heading {
+    font-size: 3rem;
+  }
+
+  .click-here-msg {
+    text-align: center;
+    margin-top: 6rem;
+  }
+
+  .click-here-msg p {
+    margin-right: 0 !important;
+  }
+
+  .right-finger {
+    top: 0;
+  }
 }

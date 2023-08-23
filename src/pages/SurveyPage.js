@@ -249,7 +249,7 @@ export default function SurveyPage() {
                 <Header title={questions.title} classes="category-heading" />
                 <form>
                   <div className="row justify-content-center">
-                    <div className="col-8">
+                    <div className="col-12 col-md-8">
                       {questions &&
                         questions.question.map((question) => (
                           <div
@@ -261,10 +261,10 @@ export default function SurveyPage() {
                               {question.questionname}
                             </h2>
                             <div className="row justify-content-center">
-                              <div className="col-6">
+                              <div className="col-12 col-md-6">
                                 <div className="row">
                                   {question.options.map((option) => (
-                                    <div key={option} className="col-12 my-3">
+                                    <div key={option} className="col-12 my-3 text-center">
                                       <input
                                         type="checkbox"
                                         className="btn-check"
@@ -273,7 +273,7 @@ export default function SurveyPage() {
                                         onClick={optionClickHandler}
                                       />
                                       <label
-                                        className="btn btn-outline-dark w-100 rounded-pill p-2 fs-3"
+                                        className="btn btn-outline-dark w-100 rounded-pill p-2 fs-3 btn-option"
                                         htmlFor={option}
                                       >
                                         {option}
@@ -289,7 +289,7 @@ export default function SurveyPage() {
                         <div className="col-12 text-center">
                           <button
                             type="button"
-                            className="btn btn-outline-danger me-3 px-5 fs-3"
+                            className="btn btn-outline-danger me-md-3 px-5 fs-3 mb-3"
                             onClick={prevQuestion}
                             disabled={activeQuestion === 1 ? true : false}
                           >
@@ -297,7 +297,7 @@ export default function SurveyPage() {
                           </button>
                           <button
                             type="button"
-                            className="btn btn-danger px-5 fs-3"
+                            className="btn btn-danger px-5 fs-3 mb-3"
                             onClick={nextQuestion}
                             disabled={!isChecked}
                           >
