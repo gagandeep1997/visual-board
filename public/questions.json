@@ -80,31 +80,31 @@
     "steps": [
       {
         "id": "step1",
-        "step": "Define What You Want in Your Career",
+        "step": "Develop a written financial plan",
         "stepClass": "bg-warning"
       },
       {
         "id": "step2",
-        "step": "Remind Yourself of the “Why.",
+        "step": "Get into the habit of saving",
         "stepClass": "bg-primary"
       },
       {
         "id": "step3",
-        "step": "Choose 1-3 Big Goals",
+        "step": "Live below your means",
         "stepClass": "bg-secondary"
       },
       {
         "id": "step4",
-        "step": "Break Them Down Into Simple Steps",
+        "step": "Stay out of debt",
         "stepClass": "bg-danger"
       },
       {
         "id": "step5",
-        "step": "Surround Yourself With Like-Minded People",
+        "step": "Start your own business",
         "stepClass": "bg-success"
       }
     ],
-    "clickHereMsg":"If you are facing money issue ",
+    "clickHereMsg":"If you want to be a rich person ",
     "finalMsg":"Digitas has lots of money so you can use digitas money as your money to khaao piyo mje karo."
   },
   {
