@@ -12,7 +12,7 @@ export default function WelcomeSurveyPage() {
       <div className="row">
         <div className="col-12">
           <p className="survey-text fw-bold position-absolute border rounded-circle border-secondary">
-            Go to Survey Questions{" "}
+            Take survey{" "}
           </p>
           <Card
             imageSrc={healthGif}
