@@ -40,9 +40,9 @@ export default function WelcomeSurveyPage() {
           />
           <Card
             imageSrc={happyGif}
-            link="/happy"
+            link="/happiness"
             classes="position-absolute happy-gif"
-            title="Happy"
+            title="Happiness"
           />
         </div>
       </div>

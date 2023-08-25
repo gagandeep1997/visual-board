@@ -222,9 +222,9 @@
     "finalMsg":"Digitas will sponsored a holiday package for you  without taking any money from you, so jaoo jaoo ghoom k aao."
   },
   {
-    "id": "happy",
-    "title": "Happy",
-    "slug": "happy",
+    "id": "happiness",
+    "title": "Happiness",
+    "slug": "happiness",
     "question": [
       {
         "id": "q1",

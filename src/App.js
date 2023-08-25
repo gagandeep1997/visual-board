@@ -25,7 +25,7 @@ export default function App() {
       element: <SurveyPage />,
     },
     {
-      path: "/happy",
+      path: "/happiness",
       element: <SurveyPage />,
     },
     {
