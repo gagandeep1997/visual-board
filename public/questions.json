@@ -31,7 +31,7 @@
       },
       {
         "id": "step2",
-        "step": "Remind Yourself of the “Why.",
+        "step": "Remind Yourself of the WHY",
         "stepClass": "bg-primary"
       },
       {
@@ -51,7 +51,7 @@
       }
     ],
     "clickHereMsg":"To get lots of opportunities to grow your career ",
-    "finalMsg":"Digits has remarkable platfroms to build your career or paise to de hi rahen hai yaar."
+    "finalMsg":"Digitas has remarkable platforms to build your career or paise to de hi rahen hai yaar."
   },
   {
     "id": "money",
@@ -182,13 +182,13 @@
         "id": "q2",
         "questionno": 2,
         "questionname": "What steps can I take to make my travel dreams a reality?",
-        "options": ["Equals to my Manager's salary", "Trip will be on Charity"]
+        "options": ["Creating a budget", "Researching travel deals and discounts"]
       },
       {
         "id": "q3",
         "questionno": 3,
         "questionname": "Have you ever experienced Work Your World facility by Publicis Groupe ?",
-        "options": ["Yes", "Definitely"]
+        "options": ["Yes", "No"]
       }
     ],
     "steps": [
@@ -231,7 +231,7 @@
         "questionno": 1,
         "questionname": "What are some ways to achieve happiness in life?",
         "options": [
-          "relationships with family and friends",
+          "Relationships with family and friends",
           "Set and work towards meaningful goals"
         ]
       },
@@ -241,7 +241,7 @@
         "questionname": "What are some benefits of pursuing happiness in life?",
         "options": [
           "Reduced stress and anxiety",
-          "Increased overall life satis faction"
+          "Increased overall life satisfaction"
         ]
       },
       {
@@ -250,7 +250,7 @@
         "questionname": "What are some tips for cultivating happiness in life?",
         "options": [
           "Practice gratitude and mindfulness",
-          "Pursue hobbies or interests that bring joy"
+          "Pursue hobbies or interests that brings joy"
         ]
       }
     ],
@@ -282,6 +282,6 @@
       }
     ],
     "clickHereMsg":"If you are not happy ",
-    "finalMsg":"Digitas will provide you bonus with your salary in every month."
+    "finalMsg":"Digitas will provide you bonus with your salary every month."
   }
 ]
