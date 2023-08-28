@@ -19,8 +19,8 @@ export default function WelcomePage() {
         className="d-flex flex-column flex-md-row btn-container justify-content-evenly align-items-center"
         role="list"
       >
-        <Button title="Yes" url="/homepage" btnType="btn-dark" />
-        <Button title="Of course" url="/homepage" btnType="btn-dark fs-2" />
+        <Button title="Yes" url="/surveyhome" btnType="btn-dark" />
+        <Button title="Of course" url="/surveyhome" btnType="btn-dark fs-2" />
       </div>
     </div>
   );

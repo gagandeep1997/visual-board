@@ -1,7 +1,6 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import WelcomePage from "./pages/WelcomePage";
-import HomePage from "./pages/HomePage";
 import WelcomeSurveyPage from "./pages/WelcomeSurveyPage";
 import "./App.css";
 import SurveyPage from "./pages/SurveyPage";
@@ -11,10 +10,6 @@ export default function App() {
     {
       path: "/",
       element: <WelcomePage />,
-    },
-    {
-      path: "/homepage",
-      element: <HomePage />,
     },
     {
       path: "/surveyhome",
