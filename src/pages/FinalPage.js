@@ -13,7 +13,7 @@ export default function FinalPage({ finalMessage }) {
     >
       <div className="row message-container">
         <div className={borderClass + " card-btt"}>
-          <h3 className="fw-bold text-center">{finalMessage}</h3>
+          <h3 className="fw-bold text-center" dangerouslySetInnerHTML={{ __html: finalMessage}}></h3>
         </div>
       </div>
       <div className="row">

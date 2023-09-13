@@ -14,44 +14,50 @@
         "id": "q2",
         "questionno": 2,
         "questionname": "Are you planning to pursue additional education?",
-        "options": ["Yes", "Only Job"]
+        "options": ["Yes", "No - I will stick to my profession"]
       },
       {
         "id": "q3",
         "questionno": 3,
         "questionname": "The focus on long-term issue, that are hard-to-reverse are the part of?",
         "options": ["Coaching ", "Mentoring"]
+      },
+      {
+        "id": "q4",
+        "questionno": 4,
+        "questionname": "Choose the carrier Learning path",
+        "options": ["Project Management ", "Technology", "Other"]
       }
     ],
     "steps": [
       {
         "id": "step1",
-        "step": "Define What You Want in Your Career",
+        "step": "Interseting, Your vision is to become an IT engineer",
         "stepClass": "bg-warning"
       },
       {
         "id": "step2",
-        "step": "Remind Yourself of the WHY",
+        "step": "Specify the skills you want to acquire or improve within that area.",
         "stepClass": "bg-primary"
       },
       {
         "id": "step3",
-        "step": "Choose 1-3 Big Goals",
+        "step": " Choose Learning Resources such as our own Marcel or any other e-learning platform",
         "stepClass": "bg-secondary"
       },
       {
         "id": "step4",
-        "step": "Break Them Down Into Simple Steps",
+        "step": "Define Your Development Goals",
         "stepClass": "bg-danger"
       },
       {
         "id": "step5",
-        "step": "Surround Yourself With Like-Minded People",
+        "step": "Finally acquire certifications, pass the exam and congratulations for achieving your vision",
         "stepClass": "bg-success"
       }
     ],
     "clickHereMsg":"To get lots of opportunities to grow your career ",
-    "finalMsg":"Digitas has remarkable platforms to build your career or paise to de hi rahen hai yaar."
+    "finalMsg":"Digitas has remarkable platforms such as Marcel based on your selection here are few of the courses you can start with <a target=_blank href=https://marcel.ai/classes/search?query=Web+Design&page=1>Browse courses</a>"
   },
   {
     "id": "money",
