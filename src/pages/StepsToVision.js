@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 export default function StepsToVision({
   stepsToVision,
@@ -10,20 +10,40 @@ export default function StepsToVision({
     setShowFinalPage(true);
     setShowStepsToVisionBoardPage(false);
   };
+
+  
+  const [stepData, setStepData] = useState(stepsToVision);
+  const [selectedSteps, setSelectedSteps] = useState([]);
+
+  const handleStepClick = (index) => {
+    if (selectedSteps.includes(index)) {
+      // If the step is already selected, do nothing on click
+      return;
+    }
+
+    setSelectedSteps([...selectedSteps, index]);
+  };
+
+
   return (
     <div className="container-fluid vh-100 steps-to-vision-container bg-white">
       <div className="row ms-3 text-center flex-column">
         <h1 className="steps-to-vision__heading fw-bold">
           Steps to achieve your goal
         </h1>
-        {stepsToVision.map((step) => (
-          <p
-            className={`rounded-4 w-50 mx-auto ${step.stepClass} my-3 p-4 fw-medium`}
-            key={step.id}
-          >
+        {stepData.map((step, index) => (
+        <p
+          className={`rounded-4 w-50 mx-auto pr-5 ${step.stepClass} my-3 p-4 fw-medium ${selectedSteps.includes(index) ? 'checked' : ''}`}
+          key={step.id}
+          onClick={() => handleStepClick(index)}
+        >
+          <div className="step-info">
             {step.step}
-          </p>
-        ))}
+            {selectedSteps.includes(index) && <span className="checked-mark"></span>}
+          </div>
+         
+        </p>
+      ))}
       </div>
       <div className="row justify-content-end click-here-msg">
         <div className="col-auto p-0">

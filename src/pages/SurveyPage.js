@@ -97,6 +97,7 @@ export default function SurveyPage() {
     let currentOptionsSelected = 0;
     inputs.forEach((value) => {
       if (value.checked) {
+        console.log(value.checked);
         checkFound = true;
         currentOptionsSelected = currentOptionsSelected + 1;
       }

@@ -22,3 +22,19 @@ code {
 .progress {
   height: 1.6rem;
 }
+
+.step-info {
+  position: relative;
+  padding-right: 20px;
+}
+.checked-mark::before {
+  content: "✓";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  color: #fff;
+  font-size: 26px;
+  right: 0;
+  transform: translate(-50%,-50%);
+}
