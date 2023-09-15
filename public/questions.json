@@ -32,7 +32,7 @@
     "steps": [
       {
         "id": "step1",
-        "step": "Interseting, Your vision is to become an IT engineer",
+        "step": "Interesting, Your vision is to become an IT engineer",
         "stepClass": "bg-warning"
       },
       {
